@@ -1,12 +1,6 @@
-
 <html>
     <head>
-
-      <?php
-        include_once('database/connection.php');
-        include_once('includes/init.php');
-
-      ?>
+        <?php include_once('includes/init.php'); ?>
         <title>Done!</title>
         <meta charset="utf-8" />
         <link rel="shortcut icon" type="image/png" href="images/favicon.png" />
@@ -20,10 +14,22 @@
           <h2 id="subt">Yesterday you said tomorrow. Just do it!</h2>
       </header>
 
-      <div>
-          <a href="signup.php">Sign Up</a>
-          <a href="login.php">Log In</a>
-      </div>
+      <p><?= $_SESSION['message']; ?> </p>
+      <form action="action_login.php" method="post">
+        <div class="container">
+          <label><b>User Name</b></label>
+          <input type="text" name="username" required>
+          <br>
+
+          <label><b>Password</b></label>
+          <input type="password" name="password" required>
+          <br>
+
+          <div class="clearfix">
+            <input type="submit" value="Log In!">
+          </div>
+        </div>
+      </form>
 
       <footer>
 

@@ -1,11 +1,12 @@
-
 <html>
     <head>
 
       <?php
-        include_once('database/connection.php');
         include_once('includes/init.php');
 
+        $stmt = $dbh->prepare('SELECT * FROM user WHERE user_username = ? ');
+        $stmt->execute(array($_GET[user]));
+        $result = $stmt->fetch();
       ?>
         <title>Done!</title>
         <meta charset="utf-8" />
@@ -20,11 +21,11 @@
           <h2 id="subt">Yesterday you said tomorrow. Just do it!</h2>
       </header>
 
-      <div>
-          <a href="signup.php">Sign Up</a>
-          <a href="login.php">Log In</a>
-      </div>
-
+    <img src="<?=$result[user_photoId]?>" >
+    <p>User name: <?=$result[user_username]?></p>
+    <p>Name: <?=$result[user_fullName]?></p>
+    <p>Birthday: <?=$result[user_birthDate]?></p>
+    <p>Gender: <?=$result[user_gender]?></p>
       <footer>
 
       </footer>
