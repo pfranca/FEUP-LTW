@@ -1,2 +1,2 @@
 # FEUP-LTW
-Repository for [LTW] class project. A to-do lists web app.
+Repository for [LTW]-web tecnologies class project. A to-do lists web app.
